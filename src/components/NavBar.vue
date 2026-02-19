@@ -59,11 +59,11 @@ export default {
     display: flex;
     flex-direction: column;
     background-color: red;
-    padding: 24px;
+    padding: 24px 0 24px 40px;
     border-radius: 0 20px 20px 0;
     transition: width 0.3s ease;
     overflow: hidden;
-    box-shadow: 1px 0 0 black;
+    box-shadow: 2px 0 0 rgb(0, 25, 253);
 }
 
 .sidebar:not(.expandida) {
@@ -93,13 +93,14 @@ ul.infos li {
     display: flex;
     align-items: center;
     height: 40px;
-    padding: 10px 4%;
+    padding: 10px 0;
     transition: all .5s ease;
 }
 
 ul.infos li:hover {
    background-color: blue;
    cursor: pointer;
+    border-radius: 20px 0 0 20px;
 }
 
 </style>
