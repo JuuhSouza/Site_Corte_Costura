@@ -1,22 +1,24 @@
 <template>
-  <teste/>
-  <Home/>
+  <NavBar/>
   <router-view />
 </template>
 
 <script >
-import teste from './components/teste.vue'
-import Home from './views/Home.vue'
+import NavBar from './components/NavBar.vue'
 
   export default {
   name: 'App',
   components: {
-     teste, Home
+    NavBar
     }
   }
 </script>
 
-
-<style scoped>
-
+<style>
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 </style>
+

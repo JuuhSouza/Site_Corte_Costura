@@ -1,17 +1,14 @@
 <template> 
-    <h1> olpa </h1>
+
 </template>
 
 <script>
 
 export default {
     name: 'Home',
+    components: {
+
+    }
 }
 
 </script>
-
-<style scoped>
-h1{
-    color: red;
-}
-</style>
