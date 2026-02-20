@@ -1,6 +1,12 @@
 :root {
     /* FONTES */
     --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-p: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    /* SIDE-BAR */
+    --color-sidebar: #F2F2F2;
+    --color-sidebar-active: #012619;
+    --background-color-sidebar: #1E402A;
+    --background-sidebar-active: white;
+    --background-sidebar-btn: #D94B18;
 
 }
