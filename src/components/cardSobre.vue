@@ -17,10 +17,10 @@
 
                 <h1>{{ cardsInfo.name }}</h1>
                 <p>{{ cardsInfo.descricao }}</p>
-
             </div>     
         </div>      
     </div>      
+
 </section>
 </template>
 
@@ -117,17 +117,17 @@ export default {
 
 .content i{
     font-size: 4em;
-    color: var(--icone-hardskill);
+    color: var(--icone-card);
 }
 
 .content h1{
     font-size: 1.5em;
-    color: var(--title-color-card);
+    color: var(--info-card);
 }
 
 .content p{
     font-size: 1.2em;
-    color: var(--icone-hardskill);
+    color: var(--info-p-card);
     margin-top: -.9em;
 }
 

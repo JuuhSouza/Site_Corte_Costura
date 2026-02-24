@@ -23,6 +23,18 @@ body {
 
     /* CARDS */
     --color-border-card: #1E402A;
+    --info-card: #D94B18;
+    --info-p-card: #c5c5c5;
+    --icone-card: white;
+
+    /* TIMELINE */
+    --tittle-color-timeline: #b8b8b8;
+    --color-line: #1E402A;
+    --background-dot: #1E402A;
+    --border-dot: #D94B18;
+    --box-shadow-timeline: #d94c184f;
+    --color-timeline: #D94B18;
+    --color-p-timeline: #b8b8b8;
 }
 
 /* MODO ESCURO */
@@ -41,4 +53,10 @@ body {
     /* BANNER */
     --background-color-banner: black;
     --color-banner: white;
+
+    /* CARDS */
+    --color-border-card: #1E402A;
+    --info-card: #D94B18;
+    --info-p-card: #131313;
+    --icone-card: #668033;
 }

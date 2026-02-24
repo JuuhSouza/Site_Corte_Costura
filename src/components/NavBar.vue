@@ -168,6 +168,7 @@ ul.infos li i{
     cursor: pointer; 
     margin-top: 20px; 
     text-align: center;
+    margin-left: 2em;
     min-height: 40px; 
     display: flex;
     justify-content: center;
