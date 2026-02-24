@@ -2,9 +2,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 <section class="infos-section">
-    <div class="title">
-            <h1>Oque tem aq?</h1>
-        </div>
+    <!-- <div class="title">
+            <h1>Informações</h1>
+        </div> -->
 
     <div class="container-card">  
         <div class="card-box"
@@ -33,12 +33,27 @@ export default {
                 {
                     name: 'Tipos de pontos',
                     descricao: 'Conhecimento em tipos de pontos para costura',
-                    icon: 'fa-brands fa-css3-alt'
+                    icon: 'fa-solid fa-compass-drafting'
                 },
                 {
-                    name: 'HTML 5',
-                    descricao: 'Conhecimento em CSS 3',
-                    icon: 'fa-brands fa-html5'
+                    name: 'Moldes',
+                    descricao: 'Algumas imagens de moldes já prontos',
+                    icon: 'fa-solid fa-shirt'
+                },
+                {
+                    name: 'Desfile',
+                    descricao: 'Participação em desfile',
+                    icon: 'fa-solid fa-glasses'
+                },
+                {
+                    name: 'Projetos',
+                    descricao: 'Neste site também tem uma aba de projetos em andamento',
+                    icon: 'fa-solid fa-list-check'
+                },
+                {
+                    name: 'Tecidos',
+                    descricao: 'Tipos de tecidos e suas testuras',
+                    icon: 'fa-brands fa-shirtsinbulk'
                 }
         ]
     }
@@ -52,7 +67,6 @@ export default {
     background-color: var(--background-color-card);
     text-align: center;
     font-size: 2.8em;
- /*    margin-top: -3em; */
     padding: 1em 0;
     color: var(--title-color-card);
 }
@@ -70,7 +84,8 @@ export default {
     position: relative;
     width: 300px;
     height: 300px;
-    border: 2px red solid;
+    border: 2px var(--color-border-card) solid;
+    border-radius: 20px;
    /*  box-shadow: inset 20px 20px 20px rgba(255, 255, 255, 0.2),
     25px 35px 20px rgba(255, 255, 255, 0.05),
     25px 30px 30px rgba(255, 255, 255, 0),
