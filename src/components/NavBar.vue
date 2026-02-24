@@ -197,3 +197,5 @@ ul.infos li i{
         opacity: 1;
     }
 }
+
+</style>
