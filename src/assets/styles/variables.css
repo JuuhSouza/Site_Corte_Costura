@@ -1,12 +1,43 @@
+body {
+    background-color: var(--background-color-primary);
+    transition: background-color 0.3s, color 0.3s;
+    color: var(--color-primary);
+    font-family: var(--font);
+}
+
 :root {
     /* FONTES */
     --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+    /* COR GLOBAL */
+    --background-color-primary: #0D0E10;
+    --color-primary: #F2F2F2;
+
     /* SIDE-BAR */
     --color-sidebar: #F2F2F2;
-    --color-sidebar-active: #012619;
+    --color-sidebar-active: #B6E6AE;
     --background-color-sidebar: #1E402A;
-    --background-sidebar-active: white;
+    --background-sidebar-active: #0D0E10;
     --background-sidebar-btn: #D94B18;
+    --dark-mode-sidebar-btn: #b8b8b8;
 
+    /* CARDS */
+}
+
+/* MODO ESCURO */
+[data-theme="dark"] {
+    --background-color-primary: #ffffff;
+    --color-primary: ;
+
+    /* SIDE-BAR */
+    --color-sidebar: white;
+    --color-sidebar-active: #668033;
+    --background-color-sidebar: #668033;
+    --background-sidebar-active: white;
+    --background-sidebar-btn: #BF3604;
+    --dark-mode-sidebar-btn: #F2C53D;
+
+    /* BANNER */
+    --background-color-banner: black;
+    --color-banner: white;
 }

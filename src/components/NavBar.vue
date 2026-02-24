@@ -1,6 +1,5 @@
 <template>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <nav>
     <div class="container">
       <div :class="['sidebar', { 'expandida': aberto }]">
@@ -10,12 +9,22 @@
         </div>
 
         <div class="menu">
-          <ul class="infos" v-for="(item, index) in itemManu" :key="index">
-            <li :class="{'active' : itemAtivo === index}" @click=selecionarItem(index)>
-              <a href=""> <i :class="item.icon"></i> </a>
-              <a href="#" v-if="aberto"> {{ item.titulo }}</a>    
+          <ul class="infos">
+            <li v-for="(item, index) in itemManu" 
+                :key="index" 
+                :class="{'active' : itemAtivo === index}" 
+                @click="selecionarItem(index)">
+              <a href="#"> <i :class="item.icon"></i> </a>
+              <a href="#" v-if="aberto"> {{ item.titulo }}</a>
             </li>
           </ul>
+
+          <div class="theme-toggle" @click="toggleTheme">
+            <i :class="theme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun'"></i>
+            <span v-if="aberto" >
+              {{ theme === 'light' ? '' : '' }}
+            </span>
+          </div>
         </div>
 
       </div>
@@ -23,39 +32,31 @@
   </nav>
 </template>
 
-<script>
-export default {
-    name: 'NavBar',
-    data() {
-        return {
-            aberto: true,
-            itemAtivo: 0,
-            itemManu: [
-                {
-                    titulo: 'Início',
-                    icon: 'fa-solid fa-house',
-                },
-                {
-                    titulo: 'Costura',
-                    icon: 'fa-solid fa-scissors',
-                },
-                {
-                    titulo: 'Moldes',
-                    icon: 'fa-solid fa-shirt',
-                }
-            ]
-        }
-    },
-    methods: {
-        alternarSidebar() {
-            this.aberto = !this.aberto;
-            this.$emit('status-sidebar', this.aberto); // Emite o status atualizado para o componente pai
-        },
-        selecionarItem(index) {
-            this.itemAtivo = index;
-        }
-    }
-}
+<script setup>
+import { ref, defineEmits } from 'vue';
+import { useTheme } from '../composables/useTheme';
+
+const { theme, toggleTheme } = useTheme();
+
+const aberto = ref(true);
+const itemAtivo = ref(0);
+const emit = defineEmits(['status-sidebar']);
+
+const itemManu = [
+  { titulo: 'Início', icon: 'fa-solid fa-house' },
+  { titulo: 'Costura', icon: 'fa-solid fa-scissors' },
+  { titulo: 'Moldes', icon: 'fa-solid fa-shirt' },
+  { titulo: 'Desfiles', icon: 'fa-brands fa-shirtsinbulk' }
+];
+
+const alternarSidebar = () => {
+  aberto.value = !aberto.value;
+  emit('status-sidebar', aberto.value);
+};
+
+const selecionarItem = (index) => {
+  itemAtivo.value = index;
+};
 </script>
 
 <style scoped>
@@ -71,7 +72,7 @@ export default {
     background-color: var(--background-color-sidebar);
     padding: 24px 0px;
     border-radius: 0 20px 20px 0;
-    transition: width 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: visible;
 /*     box-shadow: 2px 0 0 rgb(0, 25, 253); */
 }
@@ -114,7 +115,7 @@ export default {
 
 .menu a {
     color: var(--color-sidebar);
-    font-size: 20px;
+    font-size: 1.2em;
     font-weight: 500;
     text-decoration: none;
     margin-left: 20px ;
@@ -134,17 +135,19 @@ ul.infos li {
     display: flex;
     align-items: center;
     height: 50px;
-    margin: 10px 0 10px 10px;
+    margin: 10px 0 10px 15px;
     padding: 10px 15px;
     border-radius: 20px 0px 0px 45px;
     color: var(--color-sidebar);
     cursor: pointer;
     white-space: nowrap;
-    transition: all .5s ease;
+    transition: all .4s ease;
+    position: relative;
 }
 
 ul.infos li.active {
     background-color: var(--background-sidebar-active);
+        border-radius: 20px 0px 0px 45px;
 }
 
 ul.infos li.active i,
@@ -152,16 +155,46 @@ ul.infos li.active a {
     color: var(--color-sidebar-active);
     font-weight: 600;
 }
-
+    
 ul.infos li i{
     width: 22px;
     font-size: 22px;
     text-align: center ;
 }
 
-/* ul.infos li:hover {
-   background-color: var(--background-sidebar-active);
-   color: var(--color-sidebar-active);
-} */
+/* MODO ESCURO BOTAO */
+.theme-toggle {
+    cursor: pointer; 
+    margin-top: 20px; 
+    text-align: center;
+    min-height: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-toggle i {
+    display: inline-block;
+    font-size: 2em;
+    color: var(--dark-mode-sidebar-btn);
+    transition: color 0.3s ease, transform 0.2s ease;
+    animation: rotateIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle i:hover {
+    filter: brightness(1.2);
+    transform: scale(1.2) rotate(15deg);
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-180deg) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
 
 </style>
