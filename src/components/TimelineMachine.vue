@@ -1,8 +1,7 @@
 <template>
   <section class="timeline-section">
     <div class="title">
-      <h1>História da costura</h1>
-      <p>A história da costura é rica e multifacetada, refletindo a evolução da humanidade ao longo dos séculos. Aqui está um panorama completo: Pré-História Ferramentas e Materiais: Os primeiros humanos usavam peles de animais e fibras vegetais. As agulhas feitas de osso ou espinho eram utilizadas para unir esses materiais. Antiguidade Civilizações Antigas: Egípcios, chineses e mesopotâmicos desenvolveram técnicas de costura mais sofisticadas. O uso de algodão e linho se tornou comum, e a costura era parte essencial da confecção de vestuário e tapetes. A costura não é apenas uma habilidade prática, mas também uma forma de expressão cultural e artística. A história da costura reflete mudanças sociais, econômicas e tecnológicas, e continua a evoluir no mundo contemporâneo.</p>
+      <h1>Evolução das máquinas de costura</h1>
 
           <h1> Linha do tempo </h1>
     </div>
@@ -15,14 +14,13 @@
         v-for="(item, index) in timeline" 
         :key="index"
       >
-        <div class="timeline-dot"></div>
+        <div class="timeline-dot"> 1111</div>
 
         <div class="timeline-img">
           <img :src="item.img" :alt="item.name">
         </div>
         
         <div class="timeline-content">
-          <span class="date">{{ item.date }}</span>
           <h2>{{ item.name }}</h2>
           <p>{{ item.descricao }}</p>
         </div>
@@ -154,10 +152,4 @@ transition: all .4s ease-in-out;
   color: var(--color-p-timeline);
 }
 
-.date {
-  font-weight: bold;
-  color: #3498db;
-  display: block;
-  margin-bottom: 5px;
-}
 </style>
