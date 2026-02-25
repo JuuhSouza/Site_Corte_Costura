@@ -40,22 +40,22 @@ export default {
         {
           name: 'Pré-História',
           descricao: 'Ferramentas e Materiais: Os primeiros humanos usavam peles de animais e fibras vegetais. As agulhas feitas de osso ou espinho eram utilizadas para unir esses materiais.',
-          img: new URL('../assets/img/parallax1.png', import.meta.url).href
+          img: new URL('../assets/img/pre-historia_timeline.jpg', import.meta.url).href
         },
         {
           name: 'Antiguidade',
           descricao: 'Civilizações Antigas: Egípcios, chineses e mesopotâmicos desenvolveram técnicas de costura mais sofisticadas. O uso de algodão e linho se tornou comum, e a costura era parte essencial da confecção de vestuário e tapetes.',
-          img: new URL('../assets/img/parallax1.png', import.meta.url).href // Use imagens diferentes aqui
+          img: new URL('../assets/img/antiguidade_timeline.jpg', import.meta.url).href 
         },
         {
           name: 'Idade Média',
           descricao: 'Avanços Técnicos: A introdução de máquinas simples e a agulha de ferro permitiram costuras mais duráveis. A moda começou a se desenvolver, refletindo status e classe social.',
-          img: new URL('../assets/img/parallax1.png', import.meta.url).href
+          img: new URL('../assets/img/idade-media_timeline.jpg', import.meta.url).href
         },
         {
           name: 'Renascimento',
           descricao: 'Moda e Costura: A costura tornou-se uma forma de arte, com técnicas de bordado e confecção mais elaboradas. O surgimento das guildas de alfaiates regulou a profissão.',
-          img: new URL('../assets/img/parallax1.png', import.meta.url).href
+          img: new URL('../assets/img/renascimento_timeline.jpg', import.meta.url).href
         }
       ]
     }
@@ -154,10 +154,4 @@ transition: all .4s ease-in-out;
   color: var(--color-p-timeline);
 }
 
-.date {
-  font-weight: bold;
-  color: #3498db;
-  display: block;
-  margin-bottom: 5px;
-}
 </style>

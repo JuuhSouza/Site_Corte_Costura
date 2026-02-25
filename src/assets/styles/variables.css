@@ -35,6 +35,19 @@ body {
     --box-shadow-timeline: #d94c184f;
     --color-timeline: #D94B18;
     --color-p-timeline: #b8b8b8;
+
+    /* TIMELINE-MACHINE */
+    --tittle-color-machine: #b8b8b8;
+    --color-line-machine: #1E402A;
+    --background-dot-machine: #1E402A;
+    --border-dot-machine: #D94B18;
+    --box-shadow-timeline-machine: #d94c184f;
+    --color-date-machine: #D94B18;
+    --color-p-timeline-machine: #b8b8b8;
+    --color-title-timeline-machine: #B6E6AE;
+    --color-btn-machine: #b8b8b8;
+    --background-btn-machine: #1E402A;
+
 }
 
 /* MODO ESCURO */
