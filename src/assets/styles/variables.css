@@ -47,13 +47,12 @@ body {
     --color-title-timeline-machine: #B6E6AE;
     --color-btn-machine: #b8b8b8;
     --background-btn-machine: #1E402A;
-
 }
 
 /* MODO ESCURO */
 [data-theme="dark"] {
     --background-color-primary: #ffffff;
-    --color-primary: ;
+    --color-primary: #000000;
 
     /* SIDE-BAR */
     --color-sidebar: white;
@@ -72,4 +71,26 @@ body {
     --info-card: #D94B18;
     --info-p-card: #131313;
     --icone-card: #668033;
+
+    /* TIMELINE */
+    --tittle-color-timeline: #363636;
+    --color-line: #668033;
+    --background-dot: #D94B18;
+    --border-dot: #668033;
+    --box-shadow-timeline: #66803386;
+    --color-timeline: #D94B18;
+    --color-p-timeline: #131313;
+
+    /* TIMELINE-MACHINE */
+    --tittle-color-machine: #b8b8b8;
+    --color-line-machine: #668033;
+    --background-dot-machine: #D94B18;
+    --border-dot-machine: #668033;
+    --box-shadow-timeline-machine: #66803386;
+    --color-date-machine: #668033;
+    --color-p-timeline-machine: #000000;
+    --color-title-timeline-machine: #D94B18;
+    --color-btn-machine: #000000;
+    --background-btn-machine: #668033;
+
 }

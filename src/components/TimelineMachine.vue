@@ -144,6 +144,10 @@ export default {
   position: relative;
 }
 
+.controls i{
+  color: var(--color-btn-machine);
+}
+
 .nav-btn {
   background: var(--background-btn-machine);
   color: var(--color-btn-machine);
