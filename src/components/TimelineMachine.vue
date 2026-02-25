@@ -103,7 +103,7 @@ export default {
 
 .timeline-wrapper {
   position: relative;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -176,7 +176,7 @@ export default {
 .timeline-track::before{
   content: "";
   position: absolute;
-  top: 220px;
+  top: 247px;
   left: 0;
   right: 0;
   height: 2px;
@@ -186,7 +186,7 @@ export default {
 
 .photo-wrapper {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
 }
