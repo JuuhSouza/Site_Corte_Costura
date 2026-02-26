@@ -50,6 +50,10 @@ body {
     --color-title-timeline-machine: #B6E6AE;
     --color-btn-machine: #ffffff;
     --background-btn-machine: #1E402A;
+
+    /*  FOOTER */
+    --text-color-footer: #D94B18;
+    --background-color-footer: #222222;
 }
 
 /* MODO ESCURO */
