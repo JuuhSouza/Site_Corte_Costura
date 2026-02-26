@@ -28,7 +28,7 @@ body {
     --icone-card: white;
 
     /* TIMELINE */
-    --tittle-color-timeline: #b8b8b8;
+    --tittle-color-timeline: #ffffff;
     --color-line: #1E402A;
     --background-dot: #1E402A;
     --border-dot: #D94B18;
@@ -37,7 +37,7 @@ body {
     --color-p-timeline: #b8b8b8;
 
     /* TIMELINE-MACHINE */
-    --tittle-color-machine: #b8b8b8;
+    --tittle-color-machine: #ffffff;
     --color-line-machine: #1E402A;
     --background-dot-machine: #1E402A;
     --border-dot-machine: #D94B18;

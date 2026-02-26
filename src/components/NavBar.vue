@@ -148,7 +148,7 @@ ul.infos li {
 
 ul.infos li.active {
     background-color: var(--background-sidebar-active);
-        border-radius: 20px 0px 0px 45px;
+        border-radius: 10px 0px 0px 35px;
 }
 
 ul.infos li.active i,

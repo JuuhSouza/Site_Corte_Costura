@@ -1,39 +1,41 @@
 <template>
   <div class="timeline-horizontal-title">
-    <h1> Linha do tempo das máquinas de costura</h1>
+    <h1>Linha do tempo das máquinas de costura</h1>
   </div>
 
   <div class="timeline-wrapper">
-    <div class="timeline-container" ref="carousel">
-      <div class="timeline-track">
-
-        <div v-for="item in timeline" :key="item.name" class="timeline-card">
-          <div class="photo-wrapper">
-            <img :src="item.img" :alt="item.name" class="event-photo" />
-            <div class="timeline-dot"></div>
-          </div>
-
-          <div class="event-info">
-            <span class="date">{{ item.date }}</span>
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
-          </div>
-          
+    <swiper
+      :slides-per-view="'auto'"
+      :space-between="30"
+      :grab-cursor="true"
+      class="mySwiper"
+    >
+      <swiper-slide v-for="item in timeline" :key="item.name" class="timeline-card">
+        <div class="photo-wrapper">
+          <img :src="item.img" :alt="item.name" class="event-photo" />
+          <div class="timeline-dot"></div>
         </div>
-      </div>
-    </div>
-    <div class="controls">
-      <button @click="scroll(-340)" class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
-      <button @click="scroll(340)" class="nav-btn"> <i class="fa-solid fa-chevron-right"></i> </button>
-    </div>
+
+        <div class="event-info">
+          <span class="date">{{ item.date }}</span>
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
+
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
 export default {
   name: 'Timeline',
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   data() {
     return {
       timeline: [
@@ -81,14 +83,6 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    scroll(offset) {
-      this.$refs.carousel.scrollBy({
-        left: offset,
-        behavior: 'smooth'
-      });
-    }
   }
 }
 </script>
@@ -103,92 +97,39 @@ export default {
 
 .timeline-wrapper {
   position: relative;
-  max-width: 1500px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 100px 0;
+  overflow: hidden;
 }
 
-.timeline-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory; 
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 110px 0;
-}
-
-.timeline-container::-webkit-scrollbar {
-  display: none;
-}
-
-.timeline-card {
-  flex: 0 0 300px;
-  margin: 0 20px;
-  scroll-snap-align: center; 
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  margin-top: -14em;
-  gap: 10px;
-  margin-bottom: 20px;
-  align-items: center;
-  z-index: 10;
-  position: relative;
-}
-
-.controls i{
-  color: var(--color-btn-machine);
-}
-
-.nav-btn {
-  background: var(--background-btn-machine);
-  color: var(--color-btn-machine);
-  border: none;
-  width:50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-
-.nav-btn i{
- font-size: 1.4em;
-}
-
-.nav-btn:hover {
-  opacity: 0.8;
-}
-
-.timeline-track {
-  display: flex;
-  padding: 10%;
-  position: relative;
-}
-
-.timeline-track::before{
+.mySwiper::before{
   content: "";
   position: absolute;
-  top: 247px;
+  top: 50%;
   left: 0;
   right: 0;
   height: 2px;
   background-color: var(--color-line-machine);
   z-index: 0;
+  transform: translateY(-50%);
+}
+
+.timeline-card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  height: auto;
+  padding-bottom: 20px;
 }
 
 .photo-wrapper {
   position: relative;
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 40px;
+  z-index: 2;
 }
 
 .event-photo {
@@ -196,7 +137,7 @@ export default {
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  margin-top: -11em;
+/*   margin-top: 1em; */
   border: 2px solid var(--border-dot-machine);
   position: relative;
   z-index: 2;
@@ -205,7 +146,7 @@ export default {
 .timeline-dot {
   position: absolute;
   left: 50%;
-  top: 5.7em;
+  top: 105%;
   transform: translateX(-50%);
   width: 10px;
   height: 10px;

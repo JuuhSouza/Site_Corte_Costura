@@ -68,7 +68,7 @@ export default {
 
 .card-box{
     position: relative;
-    width: 400px;
+    width: 350px;
     height: 290px;
     border: 2px var(--color-border-card) solid;
     border-radius: 20px;
