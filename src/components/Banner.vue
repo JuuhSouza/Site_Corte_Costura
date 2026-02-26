@@ -44,8 +44,9 @@ data() {
   position: relative;
   overflow: hidden;
   display: flex;
-/*   align-items:center;
-  justify-content: center; */
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 3%;
 }
 
 .wave-cut{
@@ -74,10 +75,11 @@ data() {
 }
 
 .content {
-  text-align: center;
   opacity: 0;
   transform: translateY(50px);
   transition: all 2s ease-out;
+  z-index: 2;
+  width: auto;
 }
 
 .content.is-visible {
@@ -88,14 +90,15 @@ data() {
 .infos h1 {
   color: var(--color-p-parallax);
   font-size: 3.5rem;
-  text-align: center;
-  margin-top: 2em;
-  margin-left: 16.4em;
+  text-align: right;
+  margin: 0;
+  margin-top: -3em;
 }
 
 .infos p{
   color: var(--color-p-parallax);
   font-size: 1.3rem;
-  margin-left: 40em;
+  margin: 10px 0 0 0;
+  text-align: right;
 }
 </style>
