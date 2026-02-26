@@ -15,10 +15,10 @@
                 :key="index" 
                 :class="{'active' : itemAtivo === index}" 
                 @click="selecionarItem(index)">
-              <router-link :to="{ path: item.path, hash: item.hash }" class="menu-link">
-                <i :class="item.icon"></i>
-                <span v-if="aberto" class="link-text">{{ item.titulo }}</span>
-              </router-link>
+                  <router-link :to="{ path: item.path, hash: item.hash }" class="menu-link">
+                    <i :class="item.icon"></i>
+                    <span v-if="aberto" class="link-text">{{ item.titulo }}</span>
+                  </router-link>
             </li>
           </ul>
 
@@ -49,7 +49,7 @@ const itemManu = [
   { titulo: 'Início', icon: 'fa-solid fa-house',path: '/', hash: '#inicio'},
   { titulo: 'História', icon: 'fa-solid fa-book', path: '/', hash: '#historia'},
   { titulo: 'Máquinas', icon: 'fa-solid fa-timeline', path: '/', hash: '#timelineMachine'},
-  { titulo: 'Costura', icon: 'fa-solid fa-scissors', path: '/', hash: '#'},
+  { titulo: 'Costura', icon: 'fa-solid fa-scissors', path: '/costura', hash: '#'},
   { titulo: 'Moldes', icon: 'fa-solid fa-shirt', path: '/', hash: '#'},
   { titulo: 'Desfiles', icon: 'fa-brands fa-shirtsinbulk', path: '/', hash: '#'}
 ];
