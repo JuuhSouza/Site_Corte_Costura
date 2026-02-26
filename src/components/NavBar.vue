@@ -15,8 +15,10 @@
                 :key="index" 
                 :class="{'active' : itemAtivo === index}" 
                 @click="selecionarItem(index)">
-              <a href="#"> <i :class="item.icon"></i> </a>
-              <a href="#" v-if="aberto"> {{ item.titulo }}</a>
+              <router-link :to="{ path: item.path, hash: item.hash }" class="menu-link">
+                <i :class="item.icon"></i>
+                <span v-if="aberto" class="link-text">{{ item.titulo }}</span>
+              </router-link>
             </li>
           </ul>
 
@@ -44,10 +46,12 @@ const itemAtivo = ref(0);
 const emit = defineEmits(['status-sidebar']);
 
 const itemManu = [
-  { titulo: 'Início', icon: 'fa-solid fa-house' },
-  { titulo: 'Costura', icon: 'fa-solid fa-scissors' },
-  { titulo: 'Moldes', icon: 'fa-solid fa-shirt' },
-  { titulo: 'Desfiles', icon: 'fa-brands fa-shirtsinbulk' }
+  { titulo: 'Início', icon: 'fa-solid fa-house',path: '/', hash: '#inicio'},
+  { titulo: 'História', icon: 'fa-solid fa-book', path: '/', hash: '#historia'},
+  { titulo: 'Máquinas', icon: 'fa-solid fa-timeline', path: '/', hash: '#timelineMachine'},
+  { titulo: 'Costura', icon: 'fa-solid fa-scissors', path: '/', hash: '#'},
+  { titulo: 'Moldes', icon: 'fa-solid fa-shirt', path: '/', hash: '#'},
+  { titulo: 'Desfiles', icon: 'fa-brands fa-shirtsinbulk', path: '/', hash: '#'}
 ];
 
 const alternarSidebar = () => {
@@ -108,6 +112,13 @@ const selecionarItem = (index) => {
     transition: all 0.3s ease;
 }
 
+.menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
+
 .menu{
     overflow: hidden;
     height: 100%;
@@ -156,12 +167,18 @@ ul.infos li.active a {
     color: var(--color-sidebar-active);
     font-weight: 600;
 }
+
+.link-text{
+  margin-left: 20px;
+}
     
 ul.infos li i{
     width: 22px;
     font-size: 22px;
     text-align: center ;
+    margin-left: 0;
 }
+
 
 /* MODO ESCURO BOTAO */
 .theme-toggle {

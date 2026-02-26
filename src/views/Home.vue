@@ -1,10 +1,21 @@
 <template> 
-    <Banner />
+    <section id="inicio">
+            <Banner />
+     </section>
     <CardSobre />
     <!-- <FormCard/> -->
-     <Timeline/>
-     <Revolution/>
-     <TimelineMachine/>
+     
+     <section id="historia">
+        <Timeline/>
+     </section>
+
+     <section>
+        <Revolution/>
+     </section>
+
+     <section id="timelineMachine">
+        <TimelineMachine/>
+     </section>
 </template>
 
 <script>
