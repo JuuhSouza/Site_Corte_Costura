@@ -21,6 +21,9 @@ body {
     --background-sidebar-btn: #D94B18;
     --dark-mode-sidebar-btn: #b8b8b8;
 
+    /* BANNER */
+    --color-p-parallax: #1E402A;
+
     /* CARDS */
     --color-border-card: #1E402A;
     --info-card: #D94B18;
@@ -63,8 +66,7 @@ body {
     --dark-mode-sidebar-btn: #F2C53D;
 
     /* BANNER */
-    --background-color-banner: black;
-    --color-banner: white;
+    --color-p-parallax: #668033;
 
     /* CARDS */
     --color-border-card: #1E402A;

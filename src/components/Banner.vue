@@ -1,10 +1,12 @@
 <template>
-  <section class="parallax-container">
+  <section class="parallax-container wave-cut">
     <div class="parallax-bg"></div>
     
     <div v-observe-visibility="onElementObserved" :class="['content', { 'is-visible': visible }]"> <!-- scroll da pagina -->
-      <!-- <h1>A arte da moda</h1>
-      <p>A experiência artesanal definitiva.</p> -->
+      <div class="infos">
+        <h1>A arte da moda</h1>
+        <p>A experiência artesanal definitiva.</p>
+      </div>
     </div>
   </section>
 </template>
@@ -42,17 +44,28 @@ data() {
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
+/*   align-items:center;
+  justify-content: center; */
+}
+
+.wave-cut{
+  clip-path: polygon(
+    0% 0%,
+    100% 0,
+    95% 50%,
+    100% 100%,
+    0% 90%
+  );
+  -webkit-clip-path: ellipse(120% 90% at 30% 6%);
 }
 
 .parallax-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200vh;
-  height: 100%;
-  background-image: url('../assets/img/Parallax1.png');
+  width: 100%;
+  height: 110%;
+  background-image: url('../assets/img/parallax_1.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,7 +75,6 @@ data() {
 
 .content {
   text-align: center;
-  color: var(--color-p);
   opacity: 0;
   transform: translateY(50px);
   transition: all 2s ease-out;
@@ -73,8 +85,17 @@ data() {
   transform: translateY(0);
 }
 
-h1 {
+.infos h1 {
+  color: var(--color-p-parallax);
   font-size: 3.5rem;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  text-align: center;
+  margin-top: 2em;
+  margin-left: 16.4em;
+}
+
+.infos p{
+  color: var(--color-p-parallax);
+  font-size: 1.3rem;
+  margin-left: 40em;
 }
 </style>
