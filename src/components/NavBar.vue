@@ -1,6 +1,4 @@
-
 <template>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <nav>
     <div class="container">
       <div :class="['sidebar', { 'expandida': aberto }]">
@@ -11,40 +9,41 @@
 
         <div class="menu">
           <ul class="infos">
-  <li v-for="(item, index) in itemMenu" 
-      :key="index" 
-      :class="{'active' : itemAtivo === index}">
+            <li v-for="(item, index) in itemMenu" 
+                :key="index" 
+                :class="{'active' : itemAtivo === index}"
+                @click="item.subMenu ? alternarSubMenu(index) : selecionarItem(index)">
 
-      <div class="menu-item-container"
-           @click.stop="item.subMenu ? alternarSubMenu(index) : selecionarItem(index)">
-           
-           <router-link v-if="!item.subMenu" :to="{ path: item.path, hash: item.hash }" class="menu-link">
-             <i :class="item.icon"></i>
-             <span v-if="aberto" class="link-text">{{ item.titulo }}</span>
-           </router-link>
+                <div class="menu-item-container">
+                    <router-link v-if="!item.subMenu" :to="{ path: item.path, hash: item.hash }" class="menu-link">
+                        <i :class="item.icon"></i>
+                        <span v-if="aberto" class="link-text">{{ item.titulo }}</span>
+                    </router-link>
 
-           <div class="menu-link" v-else>
-             <i :class="item.icon"></i>
-             <span v-if="aberto" class="link-text"> {{ item.titulo }}</span>
-             <i v-if="aberto" :class="['fa-solid fa-chevron-down seta', { 'girar': item.aberto }]"></i>
-           </div>
-      </div>
+                    <div class="menu-link" v-else>
+                        <i :class="item.icon"></i>
+                        <span v-if="aberto" class="link-text">{{ item.titulo }}</span>
+                        <i v-if="aberto" :class="['fa-solid fa-chevron-down seta', { 'girar': item.aberto }]"></i>
+                    </div>
+                </div>
 
-      <transition name="fade"> 
-        <ul v-if="item.subMenu && item.aberto && aberto" class="sub-menu">
-          <li v-for="(sub, subIndex) in item.subMenu" :key="subIndex" 
-          @click.stop="selecionarSubItem(sub.titulo)">
-            <router-link :to="{ path: sub.path, hash: sub.hash }"> {{ sub.titulo }}</router-link>
-          </li>
-        </ul>
-      </transition>
-  </li>
-</ul>
+                <transition name="menu-fade"> 
+                    <ul v-if="item.subMenu && item.aberto && aberto" class="sub-menu" @click.stop>
+                        <li v-for="(sub, subIndex) in item.subMenu" :key="subIndex" 
+                            @click.stop="selecionarSubItem(sub.titulo)">
+                            <router-link :to="{ path: sub.path, hash: sub.hash }" class="sub-link"> 
+                                {{ sub.titulo }}
+                            </router-link>
+                        </li>
+                    </ul>
+                </transition>
+            </li>
+          </ul>
 
           <div class="theme-toggle" @click="toggleTheme">
             <i :class="theme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun'"></i>
-            <span v-if="aberto" >
-              {{ theme === 'light' ? '' : '' }}
+            <span v-if="aberto" class="link-text" style="margin-left: 10px;">
+                {{ theme === 'light' ? '' : '' }}
             </span>
           </div>
         </div>
@@ -59,22 +58,13 @@ import { ref, defineEmits } from 'vue';
 import { useTheme } from '../composables/useTheme';
 
 const { theme, toggleTheme } = useTheme();
-
 const aberto = ref(true);
 const itemAtivo = ref(0);
 const subItemAtivo = ref('');
-const selecionarSubItem = (titulo) => {
-  subItemAtivo.value = titulo;
-}
 const emit = defineEmits(['status-sidebar']);
 
 const itemMenu = ref([
-  {
-    titulo: 'Início',
-    icon: 'fa-solid fa-house',
-    path: '/',
-    hash: '#inicio',
-  },
+  { titulo: 'Início', icon: 'fa-solid fa-house', path: '/', hash: '#inicio' },
   {
     titulo: 'História',
     icon: 'fa-solid fa-book',
@@ -82,21 +72,9 @@ const itemMenu = ref([
     hash: '#',
     aberto: false,
     subMenu: [
-      {
-        titulo: 'Costura',
-        path: '/',
-        hash: '#historia'
-      },
-      {
-        titulo: 'Tecidos',
-        path: '/',
-        hash: '#'
-      },
-      {
-        titulo: 'Pontos de costuras',
-        path: '/',
-        hash: '#'
-      }
+      { titulo: 'Costura', path: '/', hash: '#historia' },
+      { titulo: 'Tecidos', path: '/', hash: '#' },
+      { titulo: 'Pontos', path: '/', hash: '#' }
     ]
   },
   {
@@ -104,22 +82,10 @@ const itemMenu = ref([
     icon: 'fa-solid fa-timeline',
     path: '/',
     hash: '#',
+    aberto: false,
     subMenu: [
-      {
-        titulo: 'Máquinas de costura',
-        path: '/',
-        hash: '#timelineMachine'
-      },
-      {
-        titulo: 'Tecidos',
-        path: '/',
-        hash: '#'
-      },
-      {
-        titulo: 'Pontos de costuras',
-        path: '/',
-        hash: '#'
-      }
+      { titulo: 'Máquinas', path: '/', hash: '#timelineMachine' },
+      { titulo: 'Tecidos', path: '/', hash: '#' }
     ]
   },
   {
@@ -153,23 +119,23 @@ const alternarSubMenu = (index) => {
     emit('status-sidebar', true);
   }
 
-  const estaAberto = itemMenu.value[index].aberto;
-
-  // fecha todos
-  itemMenu.value.forEach(item => {
-    if (item.subMenu) item.aberto = false;
+  const estadoAtual = itemMenu.value[index].aberto;
+  
+  // Fecha outros submenus abertos para não poluir a tela
+  itemMenu.value.forEach((item, i) => {
+    if (item.subMenu && i !== index) item.aberto = false;
   });
 
-  // abre apenas se ele não estava aberto
-  if (!estaAberto) {
-    itemMenu.value[index].aberto = true;
-  }
-
+  itemMenu.value[index].aberto = !estadoAtual;
   itemAtivo.value = index;
 };
 
 const selecionarItem = (index) => {
   itemAtivo.value = index;
+};
+
+const selecionarSubItem = (titulo) => {
+  subItemAtivo.value = titulo;
 };
 </script>
 
@@ -184,31 +150,20 @@ const selecionarItem = (index) => {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color-sidebar);
-    padding: 24px 0px;
-    border-radius: 0 20px 20px 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: visible;
-/*     box-shadow: 2px 0 0 rgb(0, 25, 253); */
+    padding: 24px 0;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar:not(.expandida) {
     width: 80px;
-    padding-left: 0;
-}
-
-.sidebar:not(.expandida) .btn-menu {
-    align-self: unset;
-    right: -15px;
-    padding-right: 0;
-
 }
 
 .btn-menu i {
-    font-size: 20px;
     position: absolute;
     right: -15px;
-    width: 35px;
-    height: 35px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
     background-color: var(--background-sidebar-btn);
     color: var(--color-sidebar);
     border-radius: 50%;
@@ -216,147 +171,104 @@ const selecionarItem = (index) => {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    z-index: 1001;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.menu-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    width: 100%;
-}
-
-.menu{
+.menu {
     overflow-y: auto;
     overflow-x: hidden;
-    height: 100%;
-    margin-top: 1.2em;
-}
-
-.menu a {
-    color: var(--color-sidebar);
-    font-size: 1em;
-    text-decoration: none;
-}
-
-.menu span{
-    padding: 1em 0;
-}
-
-.menu i {
-    margin-left: -1em ;
+    margin-top: 40px;
+    flex-grow: 1;
 }
 
 ul.infos {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 ul.infos li {
-    list-style: none;
-    display: block;
-    flex-direction: column;
-    width: calc(100% - 15px);
-    align-items: flex-start;
-    min-height: auto;
-    height: auto;
-    margin: 10px 0 10px 15px;
-    padding: 10px 15px;
+    padding: 12px 20px;
+    margin: 4px 0 4px 10px;
     border-radius: 20px 0px 0px 45px;
-    color: var(--color-submenu);
     cursor: pointer;
-    white-space: normal;
-    transition: all .4s ease;
-    position: relative;
-    overflow: visible;
+    transition: all 0.3s ease;
+    color: var(--color-sidebar);
 }
 
 ul.infos li.active {
     background-color: var(--background-sidebar-active);
-    color:var(--color-active);
-    border-radius: 10px 0px 0px 35px;
-}
-
-ul.infos li.active i,
-ul.infos li.active a {
-    color: var(--color-sidebar-active);
-    font-weight: 600;
-}
-
-.link-text{
-  margin-left: 15px;
-  margin-right: 10px;
-  max-width: calc(100% - 40px);
-  white-space: normal;
-  word-break: break-word;
-  display: inline-block;
-}
-    
-ul.infos li i{
-    width: 22px;
-    font-size: 22px;
-    text-align: center ;
-    margin-left: 0;
-}
-
-.sub-menu{
-  list-style: none;
-  padding: 5px 0 5px 20px;
-  margin: 0;
-  width: 100%;
-  max-width: 160px;
-  display: block;
-}
-
-.sub-menu li{
-  width: 100%;
-  padding: 0; 
-  min-height: auto;
-}
-
-.sub-menu a{
-  display: block;
-  font-size: 1rem;
-  transition: all .4s ease;
-  text-align: start;
-  margin-left: -2em;
-  width: 100%;
-  color: var(--color-submenu);
-  white-space: normal !important;
-  word-wrap: break-word;
-  line-height: 1.2;
-}
-
-.seta{
-  margin-left: auto;
-  transition: transform 0.3s ease;
-}
-
-.seta.girar{
-  transform: rotate(180deg);
+    color: var(--color-active);
 }
 
 .menu-item-container {
     display: flex;
     align-items: center;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
     width: 100%;
+    text-decoration: none;
+    color: inherit;
 }
 
-.active-sub a {
-  background-color: var(--background-sidebar-active);
-  color: var(--color-sidebar-active);
-  font-weight: 600;
-  border-radius: 20px 0px 0px 45px;
+.menu-link i:first-child {
+    font-size: 1.4em;
+    min-width: 30px;
+    text-align: center;
 }
 
-/* MODO ESCURO BOTAO */
+.link-text {
+    margin-left: 15px;
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.seta {
+    margin-left: auto;
+    font-size: 1.4em;
+    transition: transform 0.3s;
+}
+
+.seta.girar {
+    transform: rotate(180deg);
+}
+
+.sub-menu {
+    list-style: none;
+    padding: 10px 0 5px 45px;
+}
+
+.sub-link {
+    display: block;
+    padding: 0;
+    margin-left: -2em;
+    text-decoration: none;
+    color: var(--color-active);
+    font-size: 1em;
+    transition: all 0.4s ease;
+    font-weight: 500;
+  }
+
+.sub-link:hover {
+    opacity: 0.7;
+    color: var(--color-submenu-hover);
+}
+
+.sidebar:not(.expandida) ul.infos li {
+    padding: 12px 0;
+    margin-left: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+}
+
 .theme-toggle {
     cursor: pointer; 
     margin-top: 20px; 
     text-align: center;
-    margin-left: 2em;
     min-height: 40px; 
     display: flex;
     justify-content: center;
