@@ -209,7 +209,8 @@ const selecionarItem = (index) => {
 }
 
 .menu{
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     margin-top: 3em;
 }
@@ -235,8 +236,9 @@ ul.infos {
 
 ul.infos li {
     list-style: none;
-    display: flex;
+    display: block;
     flex-direction: column;
+    width: calc(100% - 15px);
     align-items: flex-start;
     min-height: auto;
     height: auto;
@@ -283,6 +285,7 @@ ul.infos li i{
   padding: 5px 0 5px 20px;
   margin: 0;
   width: 100%;
+  max-width: 160px;
   display: block;
 }
 
@@ -296,17 +299,13 @@ ul.infos li i{
   display: block;
   font-size: 1rem;
   transition: all .4s ease;
-  padding: 8px 5px;
-  text-align: left;
+  text-align: start;
+  margin-left: -2em;
   width: 100%;
   color: var(--color-submenu);
-  white-space: normal;
+  white-space: normal !important;
   word-wrap: break-word;
   line-height: 1.2;
-}
-
-.sub-menu a:hover{
-  color: var(--color-submenu-hover);
 }
 
 .seta{
