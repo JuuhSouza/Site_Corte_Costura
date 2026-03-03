@@ -86,6 +86,16 @@ const itemMenu = ref([
         titulo: 'Costura',
         path: '/',
         hash: '#historia'
+      },
+      {
+        titulo: 'Tecidos',
+        path: '/',
+        hash: '#'
+      },
+      {
+        titulo: 'Pontos de costuras',
+        path: '/',
+        hash: '#'
       }
     ]
   },
@@ -99,6 +109,16 @@ const itemMenu = ref([
         titulo: 'Máquinas de costura',
         path: '/',
         hash: '#timelineMachine'
+      },
+      {
+        titulo: 'Tecidos',
+        path: '/',
+        hash: '#'
+      },
+      {
+        titulo: 'Pontos de costuras',
+        path: '/',
+        hash: '#'
       }
     ]
   },
@@ -184,11 +204,11 @@ const selecionarItem = (index) => {
 }
 
 .btn-menu i {
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
-    right: -25px;
-    width: 50px;
-    height: 50px;
+    right: -15px;
+    width: 35px;
+    height: 35px;
     background-color: var(--background-sidebar-btn);
     color: var(--color-sidebar);
     border-radius: 50%;
@@ -212,7 +232,7 @@ const selecionarItem = (index) => {
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
-    margin-top: 3em;
+    margin-top: 1.2em;
 }
 
 .menu a {
@@ -256,7 +276,7 @@ ul.infos li {
 ul.infos li.active {
     background-color: var(--background-sidebar-active);
     color:var(--color-active);
-        border-radius: 10px 0px 0px 35px;
+    border-radius: 10px 0px 0px 35px;
 }
 
 ul.infos li.active i,
