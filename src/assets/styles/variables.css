@@ -23,7 +23,8 @@ body {
 
     /* SUB-MENU */
     --color-submenu-hover: #D94B18;
-    --color-submenu: #B6E6AE;
+    --color-submenu: white;
+    --color-active: #ffffff;
 
 
     /* BANNER */
@@ -75,6 +76,11 @@ body {
     --background-sidebar-active: white;
     --background-sidebar-btn: #BF3604;
     --dark-mode-sidebar-btn: #F2C53D;
+
+    /* SUB-MENU */
+    --color-submenu-hover: #D94B18;
+    --color-submenu: rgb(255, 255, 255);
+    --color-active: #668033;
 
     /* BANNER */
     --color-p-parallax: #668033;

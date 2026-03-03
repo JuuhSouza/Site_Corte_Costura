@@ -245,7 +245,7 @@ ul.infos li {
     margin: 10px 0 10px 15px;
     padding: 10px 15px;
     border-radius: 20px 0px 0px 45px;
-    color: var(--color-sidebar);
+    color: var(--color-submenu);
     cursor: pointer;
     white-space: normal;
     transition: all .4s ease;
@@ -255,6 +255,7 @@ ul.infos li {
 
 ul.infos li.active {
     background-color: var(--background-sidebar-active);
+    color:var(--color-active);
         border-radius: 10px 0px 0px 35px;
 }
 
