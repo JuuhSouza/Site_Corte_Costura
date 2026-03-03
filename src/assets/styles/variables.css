@@ -21,13 +21,18 @@ body {
     --background-sidebar-btn: #D94B18;
     --dark-mode-sidebar-btn: #b8b8b8;
 
+    /* SUB-MENU */
+    --color-submenu-hover: #D94B18;
+    --color-submenu: #B6E6AE;
+
+
     /* BANNER */
     --color-p-parallax: #1E402A;
 
     /* CARDS */
     --color-border-card: #1E402A;
     --info-card: #D94B18;
-    --info-p-card: #c5c5c5;
+    --info-p-card: white;
     --icone-card: white;
 
     /* TIMELINE */
@@ -37,7 +42,7 @@ body {
     --border-dot: #D94B18;
     --box-shadow-timeline: #d94c184f;
     --color-timeline: #D94B18;
-    --color-p-timeline: #b8b8b8;
+    --color-p-timeline: white;
 
     /* TIMELINE-MACHINE */
     --tittle-color-machine: #ffffff;
@@ -54,6 +59,8 @@ body {
     /*  FOOTER */
     --text-color-footer: #D94B18;
     --background-color-footer: #222222;
+
+
 }
 
 /* MODO ESCURO */
