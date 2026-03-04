@@ -8,7 +8,7 @@
         <Timeline/>
      </section>
 
-     <section>
+     <section id="revolucaoIndustrial">
         <Revolution/>
      </section>
 
@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import Banner from '../components/Banner.vue';
-import CardSobre from '../components/CardSobre.vue';
-import Footer from '../components/footer.vue';
+import Banner from '../components/Home/Banner.vue';
+import CardSobre from '../components/Home/CardSobre.vue';
+import Footer from '../components/Footer.vue';
 import FormCard from '../components/FormCard.vue';
-import Revolution from '../components/Revolution.vue';
-import Timeline from '../components/Timeline.vue';
-import TimelineMachine from '../components/TimelineMachine.vue';
+import Revolution from '../components/Home/Revolution.vue';
+import Timeline from '../components/Home/Timeline.vue';
+import TimelineMachine from '../components/Home/TimelineMachine.vue';
 
 
 export default {

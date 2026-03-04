@@ -4,8 +4,8 @@
     
     <div v-observe-visibility="onElementObserved" :class="['content', { 'is-visible': visible }]"> <!-- scroll da pagina -->
       <div class="infos">
-        <h1>A arte da moda</h1>
-        <p>A experiência artesanal definitiva.</p>
+        <h1>A arte do Tecido</h1>
+        <p>Cada fio conta quem somos.</p>
       </div>
     </div>
   </section>
@@ -66,7 +66,7 @@ data() {
   left: 0;
   width: 100%;
   height: 110%;
-  background-image: url('../assets/img/parallax_1.png');
+  background-image: url('../../assets/img/parallax_tecido.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -89,7 +89,7 @@ data() {
 
 .infos h1 {
   color: var(--color-p-parallax);
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   text-align: right;
   margin: 0;
   margin-top: -3em;

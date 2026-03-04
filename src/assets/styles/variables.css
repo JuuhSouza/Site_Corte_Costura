@@ -61,7 +61,16 @@ body {
     --text-color-footer: #D94B18;
     --background-color-footer: #222222;
 
-
+    /* PAGINA DE TECIDO */
+    --color-tecido: #ffffff;
+    --border-title-tecido: #1E402A;
+    /* TEAR */
+    --color-line-machine: #1E402A;
+    --border-photo: #D94B18;
+    --date-tear: #ffffff;
+    --color-title-tear: #D94B18;
+    --p-tear: #ffffff;
+    --subtitle-tear: #B6E6AE;
 }
 
 /* MODO ESCURO */
