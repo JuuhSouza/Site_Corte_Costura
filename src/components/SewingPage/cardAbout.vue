@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    name: 'cardSobre',
+    name: 'cardAbout',
     data() {
         return {
             cardsInfo: [

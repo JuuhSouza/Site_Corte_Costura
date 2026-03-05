@@ -1,11 +1,43 @@
-<template>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <h1> tesetette</h1>
+<template> 
+    <section id="startSewingPage">
+            <Banner />
+     </section>
+
+     <section id="historySewing">
+        <CardSobre />
+     </section>
+
+     <section id="sewingTimeline">
+        <Timeline/>
+     </section>
+
+     <section id="revolution">
+        <Revolution/>
+     </section>
+
+     <section id="timelineMachine">
+        <TimelineMachine/>
+     </section>
+     
+     <section>
+        <Footer/>
+     </section>
 </template>
 
 <script>
+import Banner from '../components/SewingPage/Banner.vue';
+import cardAbout from '../components/SewingPage/cardAbout.vue';
+import Footer from '../components/Footer.vue';
+import Revolution from '../components/SewingPage/Revolution.vue';
+import Timeline from '../components/SewingPage/Timeline.vue';
+import TimelineMachine from '../components/SewingPage/TimelineMachine.vue';
+
+
 export default {
-    name: 'SewingPage'
+    name: 'SewingPage',
+    components: {
+        Banner, cardAbout, Timeline, Revolution, TimelineMachine, Footer
+    }
 }
+
 </script>

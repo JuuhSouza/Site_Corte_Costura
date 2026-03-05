@@ -26,6 +26,21 @@ body {
     --color-submenu: white;
     --color-active: #ffffff;
 
+    /* Editor */
+    --color-editor: #D94B18;
+    --background-editor: #1E402A;
+    --background-menu-add: #1E402A;
+    --border-input: #1E402A;
+    --upload-background: #D94B18;
+    --btn-background-save: white;
+    --color-save: black;
+    --btn-background-cancel: white;
+    --btn-color-cancel: black;
+    --edit-background: #D94B18;
+    --delet-background: #c20c0c;
+    --color-delet: white;
+    --background-card: trasparent;
+    --color-post: white;
 
     /* BANNER */
     --color-p-parallax: #1E402A;

@@ -64,7 +64,12 @@ const subItemAtivo = ref('');
 const emit = defineEmits(['status-sidebar']);
 
 const itemMenu = ref([
-  { titulo: 'Início', icon: 'fa-solid fa-house', path: '/', hash: '#inicio' },
+  {
+    titulo: 'Início',
+    icon: 'fa-solid fa-house',
+    path: '/',
+    hash: '#home'
+  },
   {
     titulo: 'História',
     icon: 'fa-solid fa-book',
@@ -72,10 +77,10 @@ const itemMenu = ref([
     hash: '#',
     aberto: false,
     subMenu: [
-      { titulo: 'Costura', path: '/', hash: '#historia' },
+      { titulo: 'Costura', path: '/SewingPage', hash: '#historySewing' },
       { titulo: 'Tecidos', path: '/FabricPage', hash: '#start' },
       { titulo: 'Pontos', path: '/', hash: '#' },
-      { titulo: 'Máquinas de costura', path: '/', hash: '#revolucaoIndustrial' }
+      { titulo: 'Máquinas de costura', path: '/', hash: '#revolution' }
     ]
   },
   {
@@ -85,16 +90,16 @@ const itemMenu = ref([
     hash: '#',
     aberto: false,
     subMenu: [
-      { titulo: 'Costura', path: '/', hash: '#sewing' },
-      { titulo: 'Máquinas', path: '/Tecidos', hash: '#timelineMachine' },
+      { titulo: 'Costura', path: '/SewingPage', hash: '#sewingTimeline' },
+      { titulo: 'Máquinas', path: '/SewingPage', hash: '#timelineMachine' },
       { titulo: 'Tecidos', path: '/SewingPage', hash: '#tearHistory' }
     ]
   },
   {
-    titulo: 'Costura',
+    titulo: 'Editar',
     icon: 'fa-solid fa-scissors',
-    path: '/costura',
-    hash: '#'
+    path: '/AdminEditor',
+    hash: '#editor'
   },
   {
     titulo: 'Moldes',
