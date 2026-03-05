@@ -9,22 +9,26 @@
         <History/>
     </section>
 
-    <section >
+    <section>
+        <Tear/>
+    </section>
+
+    <section id="tearHistory">
         <TearHistory/>
     </section>
 
 </template>
 
 <script>
-import History from '../components/Tecidos/History.vue';
-import Parallax from '../components/Tecidos/Parallax.vue';
-import TearHistory from '../components/Tecidos/TearHistory.vue';
+import History from '../components/FabricPage/History.vue';
+import Parallax from '../components/FabricPage/Parallax.vue';
+import TearHistory from '../components/FabricPage/TearHistory.vue';
+import Tear from '../components/FabricPage/Tear.vue';
 
 export default {
-    name: 'Tecidos',
+    name: 'FabricPage',
     components: {
-        History, Parallax, TearHistory
-        
+        History, Parallax, TearHistory, Tear
     }
 }
 </script>

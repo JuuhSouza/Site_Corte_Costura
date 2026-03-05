@@ -73,7 +73,7 @@ const itemMenu = ref([
     aberto: false,
     subMenu: [
       { titulo: 'Costura', path: '/', hash: '#historia' },
-      { titulo: 'Tecidos', path: '/Tecidos', hash: '#start' },
+      { titulo: 'Tecidos', path: '/FabricPage', hash: '#start' },
       { titulo: 'Pontos', path: '/', hash: '#' },
       { titulo: 'Máquinas de costura', path: '/', hash: '#revolucaoIndustrial' }
     ]
@@ -85,8 +85,9 @@ const itemMenu = ref([
     hash: '#',
     aberto: false,
     subMenu: [
-      { titulo: 'Máquinas', path: '/', hash: '#timelineMachine' },
-      { titulo: 'Tecidos', path: '/Tecidos', hash: '#timeline' }
+      { titulo: 'Costura', path: '/', hash: '#sewing' },
+      { titulo: 'Máquinas', path: '/Tecidos', hash: '#timelineMachine' },
+      { titulo: 'Tecidos', path: '/SewingPage', hash: '#tearHistory' }
     ]
   },
   {

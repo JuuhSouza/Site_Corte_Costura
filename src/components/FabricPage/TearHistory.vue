@@ -74,6 +74,7 @@ export default {
 
 <style scoped>
 .timeline-section {
+  margin-top: -6em;
   padding: 80px 0; 
   overflow: visible;
 }

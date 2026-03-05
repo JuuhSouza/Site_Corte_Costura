@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Costura from '../views/Costura.vue'
-import Tecidos from '../views/Tecidos.vue'
+import SewingPage from '../views/SewingPage.vue'
+import FabricPage from '../views/FabricPage.vue'
 
 const routes = [
     {
@@ -9,13 +9,13 @@ const routes = [
         name: 'Home',
         component: Home
     }, {
-        path: '/costura',
-        name: 'costura',
-        component: Costura
+        path: '/sewingPage',
+        name: 'sewingPage',
+        component: SewingPage
     }, {
-        path: '/tecidos',
-        name: 'tecidos',
-        component: Tecidos
+        path: '/fabricPage',
+        name: 'fabricPage',
+        component: FabricPage
     }
 ]
 

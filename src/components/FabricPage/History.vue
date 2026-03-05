@@ -24,7 +24,6 @@ export default {
   name: 'History',
   data() {
     return {
-      // Renomeado para listaHistoria para clareza
       listaHistoria: [
         {
           title: 'Antiguidade: O Nascimento das Fibras Naturais',

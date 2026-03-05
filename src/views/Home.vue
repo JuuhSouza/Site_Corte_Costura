@@ -4,7 +4,7 @@
      </section>
     <CardSobre />
 
-     <section id="historia">
+     <section id="sewing">
         <Timeline/>
      </section>
 
