@@ -4,7 +4,6 @@
    <section id="home">
          <Feed/>
    </section>
-   
 </template>
 
 <script>

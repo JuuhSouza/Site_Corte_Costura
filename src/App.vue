@@ -6,13 +6,18 @@
       <router-view />
     </main>
   </div>
+
+  <section>
+    <Footer/>
+  </section>
 </template>
 
 <script>
+import Footer from './components/Footer.vue';
 import NavBar from './components/NavBar.vue'
 
 export default {
-  components: { NavBar },
+  components: { NavBar, Footer },
   data() {
     return {
       sidebarAberta: true // Começa igual ao estado inicial da sidebar

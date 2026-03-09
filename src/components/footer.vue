@@ -19,7 +19,7 @@
 <style scoped>
 footer {
     position: relative;
-    width: 93%;
+    width: 100%;
     background: var(--background-color-footer);
     min-height: 100px;
     padding: 20px 50px;

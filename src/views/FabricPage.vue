@@ -24,7 +24,8 @@ import History from '../components/FabricPage/History.vue';
 import Parallax from '../components/FabricPage/Parallax.vue';
 import TearHistory from '../components/FabricPage/TearHistory.vue';
 import Tear from '../components/FabricPage/Tear.vue';
-
+/* import Footer from '../components/Footer.vue';
+ */
 export default {
     name: 'FabricPage',
     components: {

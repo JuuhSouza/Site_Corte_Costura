@@ -27,20 +27,28 @@ body {
     --color-active: #ffffff;
 
     /* Editor */
-    --color-editor: #D94B18;
+    --color-editor: #ffffff;
+    --background-category: #1E402A;
     --background-editor: #1E402A;
     --background-menu-add: #1E402A;
     --border-input: #1E402A;
+    --border-input-add: #D94B18;
     --upload-background: #D94B18;
-    --btn-background-save: white;
-    --color-save: black;
-    --btn-background-cancel: white;
-    --btn-color-cancel: black;
-    --edit-background: #D94B18;
-    --delet-background: #c20c0c;
-    --color-delet: white;
-    --background-card: trasparent;
+    --color-edit: #B6E6AE;
+    --background-hover-edit: #B6E6AE;
+    --color-delet: #D94B18;
+    --color-delet-hover: #fffefe;
+    --background-hover-delet: #D94B18;
+    --background-btn: #0D0E10;
     --color-post: white;
+    --color-select: white;
+    --background-select: #D94B18;
+    --border-select: #D94B18;
+    --date-editor: #D94B18;
+
+    /* FEED */
+    --color-title-feed: red;
+    --color-search-feed: red;
 
     /* BANNER */
     --color-p-parallax: #1E402A;
